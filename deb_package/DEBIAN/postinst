@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cat /etc/passwd | grep '/home/' | \
+grep -v 'cups\|syslog' | cut -d ':' -f 1 > /tmp/homes.list
+
+#7z x /tmp/patched.7z -aos -o"/tmp/patched-acd/"
+mkdir /tmp/patched-acd/ -p
+cd /tmp/patched-acd/
+p7zip -f -k -d /tmp/patched.7z
+cd -
+chmod 777 -R /tmp/patched-acd/
+
+while read USUARIO; do
+	runuser -l $USUARIO -c "rsync -a /tmp/patched-acd/ /home/$USUARIO/"
+	runuser -l $USUARIO -c 'wine regedit /tmp/ACD.reg'
+	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/ChemSketch.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop"
+	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/3D\ Viewer.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/3D\ Viewer.desktop"
+done < /tmp/homes.list

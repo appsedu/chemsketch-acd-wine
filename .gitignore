@@ -1,0 +1,2 @@
+*.deb
+deb_package/tmp/patched.7z

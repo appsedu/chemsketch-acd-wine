@@ -1,0 +1,14 @@
+Package: chemsketch-acd-wine
+Version: 18.2.1
+Priority:
+Architecture: all
+Essential:
+Depends: wine-stable, wine32, p7zip
+Pre-depends:
+Suggests:
+Installed-Size:
+Maintainer: Crash and Eddie
+Conflicts:
+Replaces:
+Provides:
+Description: Versão Gratuita do ACD/ChemSketch via Wine.
