@@ -1,14 +1,10 @@
 Package: chemsketch-acd-wine
 Version: 18.2.1
-Priority:
+Installed-Size: 37024
+Maintainer: Crash and Eddie <crash.eddie123@gmail.com>
+Section: science
 Architecture: all
-Essential:
+Priority: optional
 Depends: wine-stable, wine32, p7zip
-Pre-depends:
-Suggests:
-Installed-Size:
-Maintainer: Crash and Eddie
-Conflicts:
-Replaces:
-Provides:
 Description: Versão Gratuita do ACD/ChemSketch via Wine.
+ ChemSketch é um programa de modelagem molecular usado para criar e modificar imagens de estruturas químicas. Também tem um software que permite visualizar moléculas e modelos em duas e três dimensões.
