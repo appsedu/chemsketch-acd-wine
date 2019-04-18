@@ -6,4 +6,4 @@ Versão: 18.2.1
 
 Depends: wine-stable, wine32, p7zip
 
-[Baixe o pacote Debian aqui!](https://drive.google.com/open?id=1nNIi2easdlaVv1ZX7pDRj4KCkyEptzKl)
+[Baixe o pacote Debian aqui!](https://drive.google.com/open?id=1HbHQDSulmcDvBRDNrd-aFDMd2HNXwN3l)
