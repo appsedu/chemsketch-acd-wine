@@ -77,4 +77,5 @@ while read USUARIO; do
 	runuser -l $USUARIO -c " rm -rf /home/$USUARIO/.local/share/icons/hicolor/96x96/apps/DB07_setup.1.png"
 	runuser -l $USUARIO -c " rm -rf /home/$USUARIO/.local/share/icons/hicolor/96x96/apps/CDF2_SHOW3D.0.png"
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/desktop-directories/wine-Programs-ACDLabs\ Freeware\ 2018.directory"
+	rm -rf /home/$USUARIO/Desktop/ChemSketch.desktop
 done < /tmp/homes.list
