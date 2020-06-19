@@ -28,9 +28,10 @@ while read USUARIO; do
 	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/ChemSketch.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop"
 	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/3D\ Viewer.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/3D\ Viewer.desktop"
 	
-	geraShort /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop \
-	/home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop \
-	> /home/$USUARIO/Desktop/ChemSketch.desktop
+	# geraShort /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop \
+	# /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop \
+	# > /home/$USUARIO/Desktop/ChemSketch.desktop
+	cp /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop /home/$USUARIO/Desktop/ChemSketch.desktop
 
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.cache/"
 	if [ -f /usr/bin/lxpanelctl ]; then
