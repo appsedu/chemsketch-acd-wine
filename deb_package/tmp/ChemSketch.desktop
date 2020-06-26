@@ -6,3 +6,4 @@ StartupNotify=true
 Path=/home/USUARIO/.wine/dosdevices/c:/ACD2018FREE
 Icon=4795_CHEMSK.0
 StartupWMClass=chemsk.exe
+Categories=Education;Science;

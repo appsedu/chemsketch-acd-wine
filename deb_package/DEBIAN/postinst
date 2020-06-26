@@ -3,24 +3,14 @@
 cat /etc/passwd | grep '/home/' | \
 grep -v 'cups\|syslog' | cut -d ':' -f 1 > /tmp/homes.list
 
-#7z x /tmp/patched.7z -aos -o"/tmp/patched-acd/"
 mkdir /tmp/patched-acd/ -p
 cd /tmp/patched-acd/
 p7zip -f -k -d /tmp/patched.7z
 cd -
 chmod 777 -R /tmp/patched-acd/
-
-function geraShort {
-	echo "[Desktop Entry]"
-	echo "Type=Link"
-	cat "$1" | \
-	grep "Name=" | head -n1
-	cat "$1" | \
-	grep "Name[pt_BR]=" | head -n1
-	cat "$1" | \
-	grep "Icon=" | head -n1
-	echo "URL=$2"
-}
+rm -rf /tmp/patched-acd/.local/share/desktop-directories/education-Chemistry.directory
+rm -rf '/tmp/patched-acd/.config/menus/applications-merged/wine-Programs-ACDLabs Freeware 2018-3D Viewer.menu'
+rm -rf '/tmp/patched-acd/.config/menus/applications-merged/wine-Programs-ACDLabs Freeware 2018-ChemSketch.menu'
 
 while read USUARIO; do
 	runuser -l $USUARIO -c "rsync -a /tmp/patched-acd/ /home/$USUARIO/"
@@ -28,9 +18,6 @@ while read USUARIO; do
 	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/ChemSketch.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop"
 	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/3D\ Viewer.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/3D\ Viewer.desktop"
 	
-	# geraShort /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop \
-	# /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop \
-	# > /home/$USUARIO/Desktop/ChemSketch.desktop
 	cp /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop /home/$USUARIO/Desktop/ChemSketch.desktop
 
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.cache/"
