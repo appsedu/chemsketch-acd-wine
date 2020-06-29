@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ChemSketch
+Exec=chemsketch-wine
+Type=Application
+StartupNotify=true
+Icon=4795_CHEMSK.0
+StartupWMClass=chemsk.exe
+Categories=Education;Science;

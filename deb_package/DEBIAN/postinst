@@ -15,10 +15,8 @@ rm -rf '/tmp/patched-acd/.config/menus/applications-merged/wine-Programs-ACDLabs
 while read USUARIO; do
 	runuser -l $USUARIO -c "rsync -a /tmp/patched-acd/ /home/$USUARIO/"
 	runuser -l $USUARIO -c 'wine regedit /tmp/ACD.reg'
-	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/ChemSketch.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop"
-	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/3D\ Viewer.desktop > .local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/3D\ Viewer.desktop"
 	
-	cp /home/$USUARIO/.local/share/applications/wine/Programs/ACDLabs\ Freeware\ 2018/ChemSketch.desktop /home/$USUARIO/Desktop/ChemSketch.desktop
+	cp /usr/share/applications/ChemSketch.desktop /home/$USUARIO/Desktop/ChemSketch.desktop
 
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.cache/"
 	if [ -f /usr/bin/lxpanelctl ]; then

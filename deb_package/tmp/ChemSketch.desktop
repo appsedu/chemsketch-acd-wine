@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=ChemSketch
-Exec=env WINEPREFIX="/home/USUARIO/.wine" wine-stable C:\\\\windows\\\\command\\\\start.exe /Unix /home/USUARIO/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/ACDLabs\\ Freeware\\ 2018/ChemSketch.lnk
-Type=Application
-StartupNotify=true
-Path=/home/USUARIO/.wine/dosdevices/c:/ACD2018FREE
-Icon=4795_CHEMSK.0
-StartupWMClass=chemsk.exe
-Categories=Education;Science;

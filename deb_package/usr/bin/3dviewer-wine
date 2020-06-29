@@ -1,0 +1,3 @@
+#!/bin/bash
+
+env WINEPREFIX="/home/$USER/.wine" wine-stable C:\\windows\\command\\start.exe /Unix /home/$USER/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/ACDLabs\ Freeware\ 2018/3D\ Viewer.lnk

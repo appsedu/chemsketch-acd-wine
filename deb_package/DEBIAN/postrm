@@ -5,8 +5,6 @@ grep -v 'cups\|syslog' | cut -d ':' -f 1 > /tmp/homes.list
 
 rm -rf /tmp/patched-acd/
 rm -rf /tmp/patched.7z
-rm -rf /tmp/ChemSketch.desktop
-rm -rf /tmp/3D\ Viewer.desktop
 rm -rf /tmp/ACD.reg
 
 while read USUARIO; do
